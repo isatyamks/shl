@@ -207,38 +207,75 @@ Response:
 #### Assessment Recommendation
 
 ```http
-POST /recommend
+POST http://127.0.0.1:8000/recommend
 Content-Type: application/json
 
 {
   "query": "I am hiring for Java developers who can also collaborate effectively with my business teams. Looking for an assessment(s) that can be completed in 40 minutes.",
-  "top_k": 10
+  "top_k": 5
 }
 ```
 
 Response:
 ```json
 {
-  "recommended_assessments": [
-    {
-      "url": "https://www.shl.com/products/product-catalog/view/java-8-new/",
-      "name": "Java 8 (New)",
-      "adaptive_support": "No",
-      "description": "Multi-choice test that measures the knowledge of Java programming...",
-      "duration": 25,
-      "remote_support": "Yes",
-      "test_type": ["Knowledge & Skills"]
-    },
-    {
-      "url": "https://www.shl.com/products/product-catalog/view/interpersonal-communications/",
-      "name": "Interpersonal Communications",
-      "adaptive_support": "No",
-      "description": "Assesses communication skills in workplace settings...",
-      "duration": 20,
-      "remote_support": "Yes",
-      "test_type": ["Personality & Behaviour"]
-    }
-  ]
+    "recommended_assessments": [
+        {
+            "url": "https://www.shl.com/products/product-catalog/view/java-8-new/",
+            "name": "Java 8 (New)",
+            "adaptive_support": "No",
+            "description": "Multi-choice test that measures the knowledge of Java class design, exceptions, generics, collections, concurrency, JDBC and Java I/O fundamentals.",
+            "duration": 18,
+            "remote_support": "Yes",
+            "test_type": [
+                "Knowledge & Skills"
+            ]
+        },
+        {
+            "url": "https://www.shl.com/products/product-catalog/view/opq-team-impact-group-development-report/",
+            "name": "OPQ Team Impact Group Development Report",
+            "adaptive_support": "No",
+            "description": "If you choose to continue with your current browser we cannot guarantee your experience.",
+            "duration": null,
+            "remote_support": "Yes",
+            "test_type": [
+                "Personality & Behaviour"
+            ]
+        },
+        {
+            "url": "https://www.shl.com/products/product-catalog/view/java-2-platform-enterprise-edition-1-4-fundamental/",
+            "name": "Java 2 Platform Enterprise Edition 1.4 Fundamental",
+            "adaptive_support": "Yes",
+            "description": "The Java 2 Platform Enterprise Edition (J2EE) 1.4 Fundamentals test measures knowledge of basic J2EE 1.4 Fundamentals. Designed for entry-level users, this test covers the following topics: Business Component Development, J2EE 1.4 Architecture, JAX 1.2, JDBC 3.0, Supporting API, Web Component Development, and Web Service Development.",
+            "duration": 30,
+            "remote_support": "Yes",
+            "test_type": [
+                "Knowledge & Skills"
+            ]
+        },
+        {
+            "url": "https://www.shl.com/products/product-catalog/view/opq-team-impact-individual-development-report/",
+            "name": "OPQ Team Impact Individual Development Report",
+            "adaptive_support": "No",
+            "description": "If you choose to continue with your current browser we cannot guarantee your experience.",
+            "duration": null,
+            "remote_support": "Yes",
+            "test_type": [
+                "Personality & Behaviour"
+            ]
+        },
+        {
+            "url": "https://www.shl.com/products/product-catalog/view/java-web-services-new/",
+            "name": "Java Web Services (New)",
+            "adaptive_support": "No",
+            "description": "Multi-choice test that measures the knowledge of basic Java constructs, OOP concepts, file handling, exception handling, threads, generics and inner class.",
+            "duration": 8,
+            "remote_support": "Yes",
+            "test_type": [
+                "Knowledge & Skills"
+            ]
+        }
+    ]
 }
 ```
 
@@ -250,7 +287,7 @@ Generate predictions for multiple queries:
 python utils/gen.py
 ```
 
-This reads from `data/train/val.csv` and writes results to `data/train/result.csv`.
+This reads from the specified CSV file (default: `data/train/test.csv`) and writes results to a corresponding result file. The script supports command-line arguments to specify custom input and output files.
 
 ## Evaluation
 
@@ -275,7 +312,7 @@ The system achieves **Mean Recall@10: 0.3700 (37.0%)** on the validation set con
 python evaluation/recallcsv.py
 ```
 
-This computes Mean Recall@10 by comparing predictions in `data/train/result.csv` against ground truth in `data/train/val.csv`.
+This computes Mean Recall@10 by comparing predictions in the specified predictions CSV against ground truth in the validation CSV. The script uses `data/train/result_val.csv` for predictions and `data/train/val.csv` for ground truth by default.
 
 ## Recommendation Algorithm
 
@@ -291,14 +328,18 @@ The system extracts structured intent from queries:
 ### Retrieval Strategy
 
 1. **Primary Retrieval**: Vector search retrieves 100 candidates using cosine similarity
-2. **Query Expansion**: Additional queries generated based on detected categories
-3. **Deduplication**: Removes duplicate assessments from expanded candidate pool
+2. **Query Expansion**: Additional queries generated based on detected categories and explicit keywords from the query
+3. **Direct Language Extraction**: Programming languages (Python, SQL, JavaScript, Java, etc.) are extracted directly from query text to supplement LLM-extracted keywords, ensuring comprehensive keyword coverage
+4. **Deduplication**: Removes duplicate assessments from expanded candidate pool
 
 ### Reranking Logic
 
 Candidates are scored using a multi-factor approach:
 
 - **Keyword Matching**: Exact matches in assessment names (30 points) or descriptions (10 points)
+  - **Precise Language Detection**: The system extracts programming languages directly from query text to handle cases where LLM extraction may miss or split keywords (e.g., "Java Script" detected separately from LLM-extracted keywords)
+  - **Language Distinction**: Java and JavaScript are treated as distinct languages - queries mentioning "Java Script" or "JavaScript" will only match JavaScript assessments, while standalone "Java" queries match Java assessments only
+  - **Keyword Normalization**: Abbreviations and variants are normalized (e.g., "js" → "javascript", "java script" → "javascript") to ensure consistent matching
 - **Category Relevance**: Domain-specific scoring for tech, sales, leadership, admin, marketing, finance, and HR categories
 - **Test Type Alignment**: Boosts assessments matching expected test types (K, S, A for hard skills; P, B, C for soft skills)
 - **Behavioral Boost**: Increases scores for personality and competency tests when behavioral skills are required
@@ -341,11 +382,13 @@ The initial implementation used basic vector search with minimal reranking, achi
 
 3. **Enhanced Scoring**: Implemented category-aware scoring that understands domain-specific relevance patterns (e.g., OPQ tests for leadership roles, Verify tests for aptitude assessments)
 
-4. **Keyword Normalization**: Added abbreviation expansion (e.g., "js" → "javascript", "ml" → "machine learning") to improve keyword matching
+4. **Keyword Normalization**: Added abbreviation expansion (e.g., "js" → "javascript", "java script" → "javascript", "ml" → "machine learning") to improve keyword matching. Implemented direct query text scanning for programming languages to handle cases where LLM extraction may miss or split keywords incorrectly.
 
-5. **Balanced Interleaving**: Implemented interleaving algorithm to ensure queries requiring both technical and behavioral assessments receive balanced recommendations
+5. **Language-Specific Matching**: Added precise distinction between Java and JavaScript - queries with "Java Script" or "JavaScript" exclusively match JavaScript assessments, preventing false matches with Java assessments.
 
-6. **Duration Constraint Handling**: Softened penalty thresholds and added tolerance windows to better handle duration constraints while maintaining relevance
+6. **Balanced Interleaving**: Implemented interleaving algorithm to ensure queries requiring both technical and behavioral assessments receive balanced recommendations
+
+7. **Duration Constraint Handling**: Softened penalty thresholds and added tolerance windows to better handle duration constraints while maintaining relevance
 
 These optimizations improved Mean Recall@10 from initial baseline to current performance levels while maintaining recommendation quality and balance.
 
