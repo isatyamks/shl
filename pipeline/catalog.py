@@ -10,9 +10,8 @@ HEADERS = {
 
 INPUT_FILE = "data/raw/catalog_metadata.json"
 OUTPUT_FILE = "data/processed/catalog.json"
-REQUEST_DELAY = 1.5
+REQUEST_DELAY = 1
 TIMEOUT = 30
-
 
 
 def des_dura(url):
