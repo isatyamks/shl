@@ -77,29 +77,66 @@ shl/
 - Python 3.10 or higher
 - Ollama installed and running locally with llama3 model
 
+### Ollama Setup
+
+This system requires Ollama for LLM-based intent classification. Follow these steps to set up Ollama:
+
+1. **Install Ollama**:
+   - Visit [https://ollama.ai](https://ollama.ai) and download Ollama for your operating system
+   - Follow the installation instructions for your platform
+
+2. **Start Ollama Service**:
+   - Ollama runs as a background service after installation
+   - Verify it's running by opening a terminal and running:
+   ```bash
+   ollama --version
+   ```
+
+3. **Download llama3 Model**:
+   ```bash
+   ollama pull llama3
+   ```
+   This may take several minutes depending on your internet connection as the model is approximately 4.7GB.
+
+4. **Verify Model Installation**:
+   ```bash
+   ollama list
+   ```
+   You should see `llama3` in the list of available models.
+
+5. **Test Ollama** (optional):
+   ```bash
+   ollama run llama3
+   ```
+   Type a test message and press Enter. Type `/bye` to exit.
+
+**Important Notes:**
+- Ollama must be running when you start the API server
+- The system uses Ollama's REST API, which is available at `http://localhost:11434` by default
+- If you need to use a different port, you can set the `OLLAMA_BASE_URL` environment variable
+- The llama3 model will be loaded on first use, which may take a few seconds
+
 ### Setup Instructions
 
-1. Clone the repository:
+1. **Clone the repository**:
 ```bash
 git clone <repository-url>
 cd shl
 ```
 
-2. Create a virtual environment:
+2. **Create a virtual environment**:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. **Install Python dependencies**:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Ensure Ollama is running with llama3 model:
-```bash
-ollama pull llama3
-```
+4. **Verify Ollama is running**:
+   Ensure Ollama is installed and the llama3 model is available (see Ollama Setup section above).
 
 ## Data Pipeline
 
@@ -139,11 +176,18 @@ This generates:
 
 ### Starting the Server
 
+**Prerequisites**: Ensure Ollama is running with the llama3 model available (see Installation section).
+
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 
 The API will be available at `http://localhost:8000`
+
+**Troubleshooting**: If you encounter errors related to Ollama:
+- Verify Ollama is running: `ollama list`
+- Ensure llama3 model is installed: `ollama pull llama3`
+- Check Ollama service is accessible at `http://localhost:11434`
 
 ### Endpoints
 
@@ -323,7 +367,7 @@ Key parameters can be adjusted in the code:
 
 ## Limitations and Future Enhancements
 
-- LLM dependency on local Ollama instance (consider cloud-based alternatives for production)
+- LLM dependency on local Ollama instance - requires Ollama to be installed and running locally (consider cloud-based alternatives for production deployment)
 - Static keyword normalization mappings (could benefit from learned embeddings)
 - Fixed scoring weights (could be optimized through hyperparameter tuning)
 - No caching layer for frequent queries
