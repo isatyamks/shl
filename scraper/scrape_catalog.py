@@ -13,7 +13,7 @@ HEADERS = {
 }
 
 PAGE_SIZE = 12
-TYPE = 1  # indivudual assessments only
+TYPE = 1
 
 session = requests.Session()
 session.headers.update(HEADERS)
@@ -66,8 +66,8 @@ def scrape_page(start):
         url = urljoin(BASE_URL, link["href"])
         name = link.get_text(strip=True)
 
-        remote_support = yes_no_from_td(tds[1])     # first icon    
-        adaptive_support = yes_no_from_td(tds[2])   # second icon
+        remote_support = yes_no_from_td(tds[1])
+        adaptive_support = yes_no_from_td(tds[2])
 
         test_types = []
         for span in tds[3].select("span.product-catalogue__key"):
