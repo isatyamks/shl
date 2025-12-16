@@ -4,9 +4,6 @@ from rag.utils.intent import infer_intent
 from rag.utils.keywords import normalize_keywords
 
 def rerank(results: List[Dict], query: str, top_k: int = 5) -> List[Dict]:
-    """
-    Reranks candidates based on intent, constraints, and enforces balance.
-    """
     intent = infer_intent(query)
     q = query.lower()
     
