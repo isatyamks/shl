@@ -8,7 +8,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (SHL-Catalog-Builder)"
 }
 
-INPUT_FILE = "data/raw/catalog_table_metadata.json"
+INPUT_FILE = "data/raw/catalog_metadata.json"
 OUTPUT_FILE = "data/processed/catalog.json"
 REQUEST_DELAY = 1.5
 TIMEOUT = 30

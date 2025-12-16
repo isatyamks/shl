@@ -1,17 +1,46 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import json
 import time
+
 
 BASE_URL = "https://www.shl.com"
 CATALOG_URL = "https://www.shl.com/products/product-catalog/"
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (SHL-Assessment-Scraper)"
+    "User-Agent": "Mozilla/5.0 (SHL-Catalog-Scraper)"
 }
 
-PAGE_SIZE = 12  # SHL uses 12 products per page
-TYPE = 1     # Individual Test Solutions ONLY
+PAGE_SIZE = 12
+TYPE = 1  # indivudual assessments only
+
+session = requests.Session()
+session.headers.update(HEADERS)
+
+def safe_get(url, params, retries=5, timeout=30):
+    for attempt in range(retries):
+        try:
+            r = session.get(url, params=params, timeout=timeout)
+            r.raise_for_status()
+            return r
+        except requests.RequestException as e:
+            wait = 5 * (attempt + 1)
+            print(f"[WARN] {e} → retrying in {wait}s")
+            time.sleep(wait)
+    raise RuntimeError("Max retries exceeded")
+
+
+def yes_no_from_td(td):
+
+    span = td.select_one("span")
+    if not span:
+        return "No"
+
+    classes = " ".join(span.get("class", [])).lower()
+    if "yes" in classes:
+        return "Yes"
+    return "No"
 
 def scrape_page(start):
     params = {
@@ -19,48 +48,70 @@ def scrape_page(start):
         "type": TYPE
     }
 
-    r = requests.get(CATALOG_URL, params=params, headers=HEADERS, timeout=15)
-    r.raise_for_status()
-
+    r = safe_get(CATALOG_URL, params=params)
     soup = BeautifulSoup(r.text, "lxml")
 
-    links = set()
-    for a in soup.select("a[href]"):
-        href = a["href"]
-        if "/products/product-catalog/view/" in href:
-            full_url = urljoin(BASE_URL, href)
-            print(f"  Found: {full_url}")
-            links.add(full_url)
+    records = []
 
-    return links
+    rows = soup.select("tr[data-entity-id]")
+    for row in rows:
+        tds = row.find_all("td")
+        if len(tds) < 4:
+            continue
+
+        link = tds[0].select_one("a[href*='/product-catalog/view/']")
+        if not link:
+            continue
+
+        url = urljoin(BASE_URL, link["href"])
+        name = link.get_text(strip=True)
+
+        remote_support = yes_no_from_td(tds[1])     # first icon    
+        adaptive_support = yes_no_from_td(tds[2])   # second icon
+
+        test_types = []
+        for span in tds[3].select("span.product-catalogue__key"):
+            code = span.get_text(strip=True)
+            if code:
+                test_types.append(code)
+
+        records.append({
+            "url": url,
+            "name": name,
+            "remote_support": remote_support,
+            "adaptive_support": adaptive_support,
+            "test_types": test_types
+        })
+
+    return records
+
 
 def scrape_all():
-    all_links = set()
+    all_records = {}
     start = 1
 
     while True:
-        print(f"Scraping page with start={start}")
-        links = scrape_page(start)
+        print(f"Scraping{start}")
+        records = scrape_page(start)
 
-        if not links:
-            print("No more products found. Stopping.")
+        if not records:
+            print("No more rows")
             break
 
-        before = len(all_links)
-        all_links.update(links)
-        after = len(all_links)
+        for r in records:
+            all_records[r["url"]] = r 
 
-        print(f"  Found {len(links)} links | Total unique: {after}")
+        print(f"  Total products collected: {len(all_records)}")
 
         start += PAGE_SIZE
-        time.sleep(1)
+        time.sleep(2) 
 
-    return sorted(all_links)
+    return list(all_records.values())
+
 
 if __name__ == "__main__":
-    links = scrape_all()
-    print("\nFINAL COUNT:", len(links))
+    data = scrape_all()
+    print("\nFINAL COUNT:", len(data))
 
-    with open("data/raw/assessment_links.txt", "w") as f:
-        for link in links:
-            f.write(link + "\n")
+    with open("data/raw/catalog_metadata.json", "w") as f:
+        json.dump(data, f, indent=2)
