@@ -1,0 +1,831 @@
+[
+{
+  "url": "https://www.shl.com/products/product-catalog/view/net-framework-4-5/",
+  "name": ".NET Framework 4.5",
+  "adaptive_support": "Yes",
+  "description": "The.NET Framework 4.5 test measures knowledge of .NET environment. Designed for experienced users, this test covers the following topics: Application Development, Application Foundation, Data Modeling, Deployment, Diagnostics, Performance, Portability, and Security.",
+  "duration": 30,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/net-mvc-new/",
+  "name": ".NET MVC (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of Model-View-Controller (MVC) architecture, validation, security, routing, and areas.",
+  "duration": 17,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/net-mvvm-new/",
+  "name": ".NET MVVM (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of MVVM pattern, scenarios, data validation, ViewModel communication and Quick-start.",
+  "duration": 5,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/net-wcf-new/",
+  "name": ".NET WCF (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of .NET fundamentals, WCF architecture, programming model, SOA, managing and programming WCF.",
+  "duration": 11,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/net-wpf-new/",
+  "name": ".NET WPF (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of .NET basics, WPF, XAML controls, events, layouts, working with WPF windows/menus and deploying WPF applications.",
+  "duration": 9,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/net-xaml-new/",
+  "name": ".NET XAML (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of XAML triggers, data binding, custom controls and layouts.",
+  "duration": 5,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/accounts-payable-new/",
+  "name": "Accounts Payable (New)",
+  "adaptive_support": "No",
+  "description": "Multiple-choice test that measures the knowledge of processing payables and vendor invoices, and the posting of journal entries.",
+  "duration": 9,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/accounts-payable-simulation-new/",
+  "name": "Accounts Payable Simulation (New)",
+  "adaptive_support": "No",
+  "description": "Simulated data entry test that measures the ability to process payables and vendor invoices.",
+  "duration": 8,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/accounts-receivable-new/",
+  "name": "Accounts Receivable (New)",
+  "adaptive_support": "No",
+  "description": "Multiple-choice test that measures the knowledge of processing receivables and invoices.",
+  "duration": 13,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/accounts-receivable-simulation-new/",
+  "name": "Accounts Receivable Simulation (New)",
+  "adaptive_support": "No",
+  "description": "Simulated data entry test that measures the ability to process receivables and invoices.",
+  "duration": 8,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/ado-net-new/",
+  "name": "ADO.NET (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge on the concepts of ADO.NET architecture, components and data provider objects.",
+  "duration": 10,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/adobe-experience-manager-new/",
+  "name": "Adobe Experience Manager (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of AEM components, templates, workflows, AEM collections, OSGi services and troubleshooting of AEM projects.",
+  "duration": 17,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/adobe-photoshop-cc/",
+  "name": "Adobe Photoshop CC",
+  "adaptive_support": "Yes",
+  "description": "The Adobe Photoshop CC test measures knowledge of Adobe Photoshop CC. Designed for experienced users, this test covers the following topics: 3D, Color, File Management, Interface, Layers, Painting and Drawing, Retouch and Enhancements, Selection, Text, and Web.",
+  "duration": 20,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/aeronautical-engineering-new/",
+  "name": "Aeronautical Engineering (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of flight mechanics, space dynamics, aerodynamics, structures and propulsion.",
+  "duration": 10,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/aerospace-engineering-new/",
+  "name": "Aerospace Engineering (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the conceptual knowledge of aerodynamics, aircraft systems and instrumentation, flight dynamics, space dynamics and avionics.",
+  "duration": 10,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/agile-software-development/",
+  "name": "Agile Software Development",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of agile methodology, scrum, feature driven software development, incremental and iterative development and processes involved in agile software development.",
+  "duration": 7,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/agile-testing-new/",
+  "name": "Agile Testing (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of tools, techniques and processes involved in the Agile testing methodology.",
+  "duration": 13,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/ai-skills/",
+  "name": "AI Skills",
+  "adaptive_support": "No",
+  "description": "The AI Skills assessment measures the skills that help candidates successfully leverage AI in their work.",
+  "duration": 16,
+  "remote_support": "Yes",
+  "test_type": [
+    "P"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/amazon-web-services-aws-development-new/",
+  "name": "Amazon Web Services (AWS) Development (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/android-development-new/",
+  "name": "Android Development (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of UI components for an Android device, services and alerts, animation and media apps, application components, security and testing.",
+  "duration": 7,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/angular-6-new/",
+  "name": "Angular 6 (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of the basic components and modules of Angular 6 and concepts like data binding, dependency injection, CRUD with HTTP, typescript, routing and navigation.",
+  "duration": 11,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/angularjs-new/",
+  "name": "AngularJS (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of AngularJS architecture, forms, directives, filters, controllers, routing and testing.",
+  "duration": 9,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/apache-hadoop-new/",
+  "name": "Apache Hadoop (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of basic concepts of Hadoop, commands, HDFS and MapReduce.",
+  "duration": 7,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/apache-hadoop-extensions-new/",
+  "name": "Apache Hadoop Extensions (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/apache-hbase-new/",
+  "name": "Apache HBase (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/apache-hive-new/",
+  "name": "Apache Hive (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of Hive architecture, datatypes, built-in functions, configurations, partitioning, bucketing and commands of Hive query language.",
+  "duration": 5,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/apache-kafka-new/",
+  "name": "Apache Kafka (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of Apache Kafka architecture, components, clusters, performance tuning and advanced operations.",
+  "duration": 6,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/apache-pig-new/",
+  "name": "Apache Pig (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of Pig architecture, built-in operators, built-in functions and commands in PigLatin.",
+  "duration": 6,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/apache-spark-new/",
+  "name": "Apache Spark (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of Apache Spark principles, RDD operations - actions and transformations, lineage graphs and lazy evaluation.",
+  "duration": 8,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/asp-net-with-c-new/",
+  "name": "ASP .NET with C# (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of .NET framework and controls, C# fundamentals, OOPs concepts and advanced topics such as data access components, state management and security services.",
+  "duration": 13,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/asp-net-4-5/",
+  "name": "ASP.NET 4.5",
+  "adaptive_support": "Yes",
+  "description": "The ASP.NET 4.5 test measures knowledge of programming in the ASP.NET environment. Designed for experienced developers, but an average performer in this role should pass this test. This test includes the following topics: .NET Framework, Client-Side Programming, Data Access, Enhanced Runtime Features, Portals, Services and Mobile, Security, Troubleshooting and Optimization, Web Applications, and Web Forms.",
+  "duration": 30,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/assessment-and-development-center-exercises/",
+  "name": "Assessment and Development Center Exercises",
+  "adaptive_support": "No",
+  "description": "SHL offers a comprehensive range of Assessment and Development Centre exercise in digital format, for remote assessment through our Virtual Assessment and Development Centre platform.We offer a wide range of exercise types including group exercise, role plays, analysis presentations and written exercises.Exercises are available across a wide range of job levels and industry contexts.Contact SHL to find out more.",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "E"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automata-fix-new/",
+  "name": "Automata - Fix (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automata-sql-new/",
+  "name": "Automata - SQL (New)",
+  "adaptive_support": "No",
+  "description": "A simulated query writing test that measures the ability to write SQL queries to perform DDL, DML and DCL tasks.",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automata-new/",
+  "name": "Automata (New)",
+  "adaptive_support": "No",
+  "description": "An AI-powered coding simulation assessment that evaluates candidate\u2019s programming ability. Offers a familiar IDE environment available in over 40 different programming languages and tests candidates using real-world coding problems.Your use of this assessment product may be subject to New York City Law 144 (Regulation of the Use of Automated Employment Decision Tools) (dated July 5, 2023). Compliance with Law 144 is your responsibility.\r\nRead more on https://www.shl.com/legal/shl-us-regulatory-compliance/",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automata-data-science-new/",
+  "name": "Automata Data Science (New)",
+  "adaptive_support": "No",
+  "description": "A simulated test that measures the ability to analyze and modify data using machine learning algorithms to obtain desirable results.",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automata-data-science-pro-new/",
+  "name": "Automata Data Science Pro (New)",
+  "adaptive_support": "No",
+  "description": "A simulated test that measures the ability to analyze and modify data using machine learning algorithms to obtain desirable results.",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automata-front-end/",
+  "name": "Automata Front End",
+  "adaptive_support": "No",
+  "description": "Simulation based test that measures the front-end development capabilities using HTML, CSS, and\r\nJavaScript. The candidate is provided with 3 different sections to code in HTML, CSS and JavaScript respectively and a separate output section to view the output. This simulation is then manually scored.",
+  "duration": 30,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automata-pro-new/",
+  "name": "Automata Pro (New)",
+  "adaptive_support": "No",
+  "description": "An AI-powered coding simulation assessment that evaluates candidate\u2019s programming ability. Offers a familiar IDE environment available in over 40 different programming languages and tests candidates using real-world coding problems.Your use of this assessment product may be subject to New York City Law 144 (Regulation of the Use of Automated Employment Decision Tools) (dated July 5, 2023). Compliance with Law 144 is your responsibility.\r\nRead more on https://www.shl.com/legal/shl-us-regulatory-compliance/",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automata-selenium/",
+  "name": "Automata Selenium",
+  "adaptive_support": "No",
+  "description": "A coding simulation assessment that evaluates the ability to conduct tasks related to automation testing using Selenium scripts.",
+  "duration": 60,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automation-anywhere-rpa-development-new/",
+  "name": "Automation Anywhere RPA Development (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/automotive-engineering-new/",
+  "name": "Automotive Engineering (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of auto engine classification, engine fuel system, auto-vehicle technology, maintenance, inspection and troubleshooting.",
+  "duration": 13,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/basic-biology-new/",
+  "name": "Basic Biology (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": 6,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/basic-computer-literacy-windows-10-new/",
+  "name": "Basic Computer Literacy (Windows 10) (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "S",
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/basic-statistics-new/",
+  "name": "Basic Statistics (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of statistical methods, exploratory analysis, basics of probability, standard distributions and statistical testing.",
+  "duration": 10,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/biochemistry-new/",
+  "name": "Biochemistry (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of various bio-molecules like amino acids, proteins, enzymes, carbohydrates, vitamins and nucleic acids, and concepts of bioenergetics and metabolism.",
+  "duration": 8,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/biotech-lab-techniques-new/",
+  "name": "Biotech Lab Techniques (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of biophysical techniques, bio-processing and separation techniques like chromatography and electrophoresis.",
+  "duration": 5,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/biztalk-new/",
+  "name": "BizTalk (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of BizTalk architecture, pipelines, adapters, business process techniques and BizTalk administration.",
+  "duration": 16,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/business-communication-adaptive/",
+  "name": "Business Communication (adaptive)",
+  "adaptive_support": "Yes",
+  "description": "This is an adaptive test that measures knowledge of communicating in the workplace. It measures the skills necessary to communicate effectively with coworkers at all levels and with external business contacts. Designed for the average business worker, this test includes the following topics: Electronic Communication, Employment Communication, Listening, Meetings, Nonverbal Communication, Verbal Communication, and Written Communication.",
+  "duration": 24,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/business-communications/",
+  "name": "Business Communications",
+  "adaptive_support": "No",
+  "description": "This test measures the candidate's knowledge of communicating in the workplace.  It measures the skills necessary to communicate effectively with coworkers at all levels and with external business contacts. Designed for the average business worker, this test includes the following topics: Electronic Communication, Employment Communication, Listening, Meetings, Nonverbal Communication, Verbal Communication, and Written Communication. This version of the test is not adaptive.",
+  "duration": 35,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/c-programming-new/",
+  "name": "C Programming (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of C programming basics, functions, arrays, composed data types, and advanced C concepts like SLF, file handling and dynamic memory.",
+  "duration": 10,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/c-programming-new-4039/",
+  "name": "C# Programming (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of C# programming structure, functions, collections, enumeration, exception handling, OOPs constructs, inheritance, event handling and operator overloading.",
+  "duration": 9,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/c-programming-new-4122/",
+  "name": "C++ Programming (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/cardiology-and-diabetes-management-new/",
+  "name": "Cardiology and Diabetes Management (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of how to control and manage cardiovascular diseases and diabetes, and understanding of the diagnostic tests used for them.",
+  "duration": 4,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/ceramic-engineering-new/",
+  "name": "Ceramic Engineering (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of classification of ceramic materials, production of ceramics and thermodynamics.",
+  "duration": 12,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/chemical-engineering-new/",
+  "name": "Chemical Engineering (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/cisco-appdynamics-new/",
+  "name": "Cisco AppDynamics (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of application analytics, performance management, and AppDynamics essentials like controller UI, custom dashboard, reports and monitoring.",
+  "duration": 9,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/civil-engineering-new/",
+  "name": "Civil Engineering (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of structural engineering, transportation engineering, surveying, geotechnical engineering and water resources engineering.",
+  "duration": 10,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/cloud-computing-new/",
+  "name": "Cloud Computing (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of cloud computing concepts, cloud service models, virtualization and private clouds.",
+  "duration": 8,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/cobol-programming-new/",
+  "name": "COBOL Programming (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of COBOL programming fundamentals, programming structure and different types of application processing.",
+  "duration": 10,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/computer-science-new/",
+  "name": "Computer Science (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of operating system, computer architecture, DBMS and basics of computer networks and communication.",
+  "duration": 12,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/contact-center-call-simulation-new/",
+  "name": "Contact Center Call Simulation (New)",
+  "adaptive_support": "No",
+  "description": "Simulation based test that measures the ability to handle customer concerns over a call by referring to standard process documents. It also measures typing and documentation skills.",
+  "duration": 15,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/conversational-multichat-simulation/",
+  "name": "Conversational Multichat Simulation",
+  "adaptive_support": "No",
+  "description": "This is a simulation-based test that measures the ability to handle customer concerns over multiple chats by referring to standard process documents. It provides an open-ended chat environment that assesses the candidate\u2019s skills in a real job setting. Candidates are scored based on whether they resolved the customer\u2019s query, the amount of time taken, and the correct use of vocabulary and grammar in their response.",
+  "duration": 11,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/core-java-advanced-level-new/",
+  "name": "Core Java (Advanced Level) (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of basic Java constructs, OOP concepts, files and exception handling, and advanced Java concepts like generics, collections, threads, strings and concurrency.",
+  "duration": 13,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/core-java-entry-level-new/",
+  "name": "Core Java (Entry Level) (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of basic Java constructs, OOP concepts, file handling, exception handling, threads, generic class and inner class.",
+  "duration": 13,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/count-out-the-money/",
+  "name": "Count Out The Money",
+  "adaptive_support": "Yes",
+  "description": "The Count out the Money \u2013US test measures a candidate\u2019s money handling ability. This test is designed for entry-level positions where handling money is required on a regular basis.",
+  "duration": 5,
+  "remote_support": "Yes",
+  "test_type": [
+    "K",
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/css3-new/",
+  "name": "CSS3 (New)",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/culinary-skills-new/",
+  "name": "Culinary Skills (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of cooking principles, cooking equipment, meal preparation and presentation, and kitchen safety.",
+  "duration": 7,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/customer-service-phone-simulation/",
+  "name": "Customer Service Phone Simulation",
+  "adaptive_support": "No",
+  "description": "As part of Contact Center Simulations, the Customer Service Phone Simulation is designed for entry-level positions in a contact center environment. Sample tasks for these jobs include: verify the customer or account; take ownership of customer issues; interact with customers to provide information; respond positively to difficult, irate, or confused customers; listen attentively to callers; resolve calls in a timely manner; navigate within multiple information menus to view customer account details and process information; and type information quickly and accurately. Potential job titles that use this solution are: Call Center Representative, Contact Center Representative, Contact Center Agent, Customer Service Agent, Customer Service Representative, and Customer Advocate.\"Please note that for Simplified Chinese version the audio is available in both Mandarin and Cantonese.\"",
+  "duration": 20,
+  "remote_support": "Yes",
+  "test_type": [
+    "B",
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/customer-service-phone-solution/",
+  "name": "Customer Service Phone Solution",
+  "adaptive_support": "No",
+  "description": "As part of Contact Center Simulations, the Customer Service Phone Solution includes a contact center simulation and two behavioral tests designed to measure a wide range of skills, competencies, and behavioral tendencies relevant for contact center jobs. The Contact Center Simulation provides an opportunity for candidates to interact with simulated customers in a contact center environment. Designed to measure a candidate\u2019s ability to listen attentively to the customer, take ownership of customer issues, resolve issues, navigate to find information, and enter information accurately, the Contact Center Simulation is intended to measure how a candidate will respond in a variety of customer situations and assess the candidate\u2019s computer skills in a contact center setting. The behavioral tests in this solution are intended to measure the candidate\u2019s learning potential and the tendency to meet goals and work hard, even when faced with obstacles. Collectively, the assessments in this solution measure a wide range of important skills, abilities, and behaviors for entry-level contact center roles.\"Please note that for Simplified Chinese version the audio is available in both Mandarin and Cantonese.\"",
+  "duration": 30,
+  "remote_support": "Yes",
+  "test_type": [
+    "B",
+    "P",
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/cyber-risk-new/",
+  "name": "Cyber Risk (New)",
+  "adaptive_support": "No",
+  "description": "Multi-choice test that measures the knowledge of cyber risk management, system and application security, network security and security management.",
+  "duration": 9,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/data-entry-new/",
+  "name": "Data Entry (New)",
+  "adaptive_support": "No",
+  "description": "Simulated data entry test that measures the ability to accurately transcribe data from pre-filled forms and the ability to verify pre-filled data.",
+  "duration": 4,
+  "remote_support": "Yes",
+  "test_type": [
+    "S"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/data-entry-alphanumeric-split-screen-us/",
+  "name": "Data Entry Alphanumeric Split Screen - US",
+  "adaptive_support": "No",
+  "description": "The Data Entry Alphanumeric Split Screen - US assessment measures speed and accuracy at typing text and numbers into forms. The information includes business-related text and numbers such as invoice number, address, product number and amount. The test assesses for speed and accuracy.",
+  "duration": 5,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/data-entry-numeric-split-screen-us/",
+  "name": "Data Entry Numeric Split Screen - US",
+  "adaptive_support": "No",
+  "description": "The Data Entry Numeric Split Screen - US assessment measures speed and accuracy at typing numbers into forms. The information candidates must enter includes business-related records including number fields such as customer number, order number, item number and quantity. Candidates may use either the keyboard's numeric keypad or the number keys at the top of the keyboard.",
+  "duration": 5,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
+{
+  "url": "https://www.shl.com/products/product-catalog/view/data-entry-ten-key-split-screen/",
+  "name": "Data Entry Ten Key Split Screen",
+  "adaptive_support": "No",
+  "description": "",
+  "duration": null,
+  "remote_support": "Yes",
+  "test_type": [
+    "K"
+  ]
+},
