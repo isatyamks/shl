@@ -3,8 +3,8 @@ import requests
 
 API_URL = "http://localhost:8000/recommend"
 
-INPUT_CSV = "data/train/val.csv"
-OUTPUT_CSV = "data/train/result.csv"
+INPUT_CSV = "data/train/test.csv"
+OUTPUT_CSV = "data/train/test_result.csv"
 TOP_K = 10
 
 

@@ -4,6 +4,7 @@ def normalize_keywords(keywords: List[str]) -> List[str]:
     expanded = set(keywords)
     mapping = {
         "js": "javascript",
+        "java script": "javascript",
         "react": "reactjs",
         "node": "node.js",
         "dotnet": ".net",

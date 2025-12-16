@@ -29,7 +29,7 @@ class QueryRequest(BaseModel):
 def recommend(req: QueryRequest):
     intent = infer_intent(req.query)
     
-    retrieval_k = 60
+    retrieval_k = 100
     candidates = retrieve(req.query, k=retrieval_k)
 
     queries_to_add = []

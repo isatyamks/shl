@@ -1,7 +1,7 @@
 import pandas as pd
 
-GROUND_TRUTH_CSV = "data/train/val.csv"
-PREDICTIONS_CSV = "data/train/result.csv"
+GROUND_TRUTH_CSV = "data/result/val.csv"
+PREDICTIONS_CSV = "data/result/val_result.csv"
 K = 10
 
 def normalize_url(url: str) -> str:

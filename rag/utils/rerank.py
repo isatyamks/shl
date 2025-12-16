@@ -9,6 +9,21 @@ def rerank(results: List[Dict], query: str, top_k: int = 5) -> List[Dict]:
     
     search_keywords = normalize_keywords(intent["explicit_keywords"])
     
+    if "java script" in q or "javascript" in q:
+        if "javascript" not in [k.lower() for k in search_keywords]:
+            search_keywords.append("javascript")
+    elif "java" in q:
+        if "javascript" not in q and "java script" not in q:
+            if "java" not in [k.lower() for k in search_keywords]:
+                search_keywords.append("java")
+    
+    other_langs = ["python", "sql", "c++", "c#", ".net", "react", "node.js", "js"]
+    for lang in other_langs:
+        if lang in q and lang not in [k.lower() for k in search_keywords]:
+            search_keywords.append(lang)
+    
+    search_keywords = normalize_keywords(search_keywords)
+    
     scored = []
 
     for item in results:
@@ -19,10 +34,22 @@ def rerank(results: List[Dict], query: str, top_k: int = 5) -> List[Dict]:
         
         for kw in search_keywords:
             kw_lower = kw.lower()
-            if kw_lower in name: 
-                score += 30.0
-            elif kw_lower in desc: 
-                score += 10.0
+            
+            if kw_lower in ["javascript", "js"]:
+                if "javascript" in name:
+                    score += 30.0
+                elif "javascript" in desc:
+                    score += 10.0
+            elif kw_lower == "java":
+                if "javascript" not in name and "java" in name:
+                    score += 30.0
+                elif "javascript" not in desc and "java" in desc:
+                    score += 10.0
+            else:
+                if kw_lower in name:
+                    score += 30.0
+                elif kw_lower in desc:
+                    score += 10.0
 
         if "tech" in intent["categories"]:
             if "K" in test_types: score += 5.0
