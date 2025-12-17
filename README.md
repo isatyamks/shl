@@ -118,9 +118,8 @@ This system requires Ollama for LLM-based intent classification. Follow these st
 
 ### Setup Instructions
 
-1. **Clone the repository**:
+1. **Navigate to the project directory**:
 ```bash
-git clone <repository-url>
 cd shl
 ```
 

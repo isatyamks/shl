@@ -1,13 +1,8 @@
 fastapi
 uvicorn
 pydantic
-requests
-beautifulsoup4
-lxml
-pandas
 faiss-cpu
-torch
 numpy
 sentence-transformers
-langchain-core
-langchain-ollama
+groq
+python-dotenv

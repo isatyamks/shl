@@ -1,9 +1,12 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
+from dotenv import load_dotenv
 
 from rag.retriever import retrieve
 from rag.utils import rerank, infer_intent
+
+load_dotenv()
 
 app = FastAPI()
 
@@ -42,7 +45,7 @@ def recommend(req: QueryRequest):
     
     if "admin" in intent["categories"]:
         queries_to_add.append("administrative clerical data entry typing microsoft office")
-        
+
     if "marketing" in intent["categories"]:
         queries_to_add.append("marketing digital brand strategy creative")
     
@@ -53,7 +56,7 @@ def recommend(req: QueryRequest):
         queries_to_add.append("workplace collaboration interpersonal skills teamwork communication culture")
 
     for q_add in queries_to_add:
-         candidates.extend(retrieve(q_add, k=20))
+        candidates.extend(retrieve(q_add, k=20))
 
     seen = set()
     unique_candidates = []

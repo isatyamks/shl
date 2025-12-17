@@ -1,7 +1,6 @@
 import json
 import os
 import faiss
-import torch
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
@@ -18,11 +17,9 @@ def load_resources():
     global _index, _catalog, _model
     
     if _model is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-        print(f"Loading embedding model on {device}...")
         _model = SentenceTransformer(
             "sentence-transformers/all-MiniLM-L6-v2",
-            device=device
+            device='cpu'
         )
 
     if _index is None:

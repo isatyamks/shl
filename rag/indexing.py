@@ -1,18 +1,16 @@
 import json
 import numpy as np
 import faiss
-import torch
 from sentence_transformers import SentenceTransformer
 
 CATALOG_PATH = "data/processed/catalog.json"
 INDEX_PATH = "data/processed/faiss.index"
 META_PATH = "data/processed/faiss_meta.json"
 
-device = "cuda" if torch.cuda.is_available() else "cpu"
 
 model = SentenceTransformer(
     "sentence-transformers/all-MiniLM-L6-v2",
-    device=device
+    device='cpu'
 )
 
 def build_embedding_text(item):
