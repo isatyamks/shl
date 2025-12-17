@@ -1,5 +1,16 @@
 # SHL Assessment Recommendation System
 
+## Quick Start
+
+**🚀 Live API**: The system is deployed and ready to use at `http://98.88.103.35:8000`
+
+**Try it now**:
+```bash
+curl -X POST http://98.88.103.35:8000/recommend \
+  -H "Content-Type: application/json" \
+  -d '{"query": "I need assessments for Java developers with collaboration skills", "top_k": 5}'
+```
+
 ## Overview
 
 This system provides an intelligent recommendation engine for SHL assessments based on natural language queries or job descriptions. The solution leverages Retrieval-Augmented Generation (RAG) techniques, combining semantic search with intent classification to deliver relevant assessment recommendations that balance hard and soft skills as required by the query.
@@ -48,6 +59,7 @@ The recommendation system follows a three-stage pipeline:
 shl/
 ├── app.py                  # FastAPI application and API endpoints
 ├── requirements.txt        # Python dependencies
+├── Dockerfile             # Docker containerization (optimized multi-stage build)
 ├── scraper/
 │   └── scrape_catalog.py  # Web scraper for SHL catalog
 ├── pipeline/
@@ -57,7 +69,7 @@ shl/
 │   ├── retriever.py       # Vector retrieval implementation
 │   └── utils/
 │       ├── models.py      # Pydantic data models
-│       ├── intent.py      # Intent classification
+│       ├── intent.py      # Intent classification (Ollama integration)
 │       ├── keywords.py    # Keyword normalization
 │       └── rerank.py      # Reranking and scoring logic
 ├── evaluation/
@@ -75,7 +87,8 @@ shl/
 ### Prerequisites
 
 - Python 3.10 or higher
-- Ollama installed and running locally with llama3 model
+- Ollama installed and running locally with llama3.1:8b model
+- Docker (optional, for containerized deployment)
 
 ### Ollama Setup
 
@@ -84,6 +97,7 @@ This system requires Ollama for LLM-based intent classification. Follow these st
 1. **Install Ollama**:
    - Visit [https://ollama.ai](https://ollama.ai) and download Ollama for your operating system
    - Follow the installation instructions for your platform
+   - For EC2 Ubuntu: Install using the Linux installation script
 
 2. **Start Ollama Service**:
    - Ollama runs as a background service after installation
@@ -92,9 +106,9 @@ This system requires Ollama for LLM-based intent classification. Follow these st
    ollama --version
    ```
 
-3. **Download llama3 Model**:
+3. **Download llama3.1:8b Model**:
    ```bash
-   ollama pull llama3
+   ollama pull llama3.1:8b
    ```
    This may take several minutes depending on your internet connection as the model is approximately 4.7GB.
 
@@ -102,19 +116,20 @@ This system requires Ollama for LLM-based intent classification. Follow these st
    ```bash
    ollama list
    ```
-   You should see `llama3` in the list of available models.
+   You should see `llama3.1:8b` in the list of available models.
 
 5. **Test Ollama** (optional):
    ```bash
-   ollama run llama3
+   ollama run llama3.1:8b
    ```
    Type a test message and press Enter. Type `/bye` to exit.
 
 **Important Notes:**
 - Ollama must be running when you start the API server
 - The system uses Ollama's REST API, which is available at `http://localhost:11434` by default
-- If you need to use a different port, you can set the `OLLAMA_BASE_URL` environment variable
-- The llama3 model will be loaded on first use, which may take a few seconds
+- For EC2 Ubuntu: The default `OLLAMA_BASE_URL=http://localhost:11434` works when running natively
+- For Docker on EC2: Set `OLLAMA_BASE_URL=http://host.docker.internal:11434` or use `--network host`
+- The llama3.1:8b model will be loaded on first use, which may take a few seconds
 
 ### Setup Instructions
 
@@ -136,7 +151,7 @@ pip install -r requirements.txt
 ```
 
 4. **Verify Ollama is running**:
-   Ensure Ollama is installed and the llama3 model is available (see Ollama Setup section above).
+   Ensure Ollama is installed and the llama3.1:8b model is available (see Ollama Setup section above).
 
 ## Data Pipeline
 
@@ -172,11 +187,51 @@ This generates:
 - `data/processed/faiss.index` (vector index)
 - `data/processed/faiss_meta.json` (assessment metadata)
 
+## Deployment
+
+### Live API
+
+The system is deployed and available at:
+
+**Base URL**: `http://98.88.103.35:8000`
+
+**Health Check**: `http://98.88.103.35:8000/health`
+
+**Recommendation Endpoint**: `http://98.88.103.35:8000/recommend`
+
+### Docker Deployment
+
+The application is containerized and optimized for production:
+
+**Image Size**: ~2.5GB (optimized with multi-stage build and CPU-only PyTorch)
+
+**Build the image**:
+```bash
+docker build -t shl .
+```
+
+**Run locally**:
+```bash
+docker run -p 8000:8000 shl
+```
+
+**For EC2 with Ollama on host**:
+```bash
+docker run -p 8000:8000 --add-host=host.docker.internal:host-gateway \
+  -e OLLAMA_BASE_URL=http://host.docker.internal:11434 shl
+```
+
+**Push to Docker Hub**:
+```bash
+docker tag shl:latest <your-username>/shl:latest
+docker push <your-username>/shl:latest
+```
+
 ## API Usage
 
-### Starting the Server
+### Starting the Server Locally
 
-**Prerequisites**: Ensure Ollama is running with the llama3 model available (see Installation section).
+**Prerequisites**: Ensure Ollama is running with the llama3.1:8b model available (see Installation section).
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
@@ -186,8 +241,9 @@ The API will be available at `http://localhost:8000`
 
 **Troubleshooting**: If you encounter errors related to Ollama:
 - Verify Ollama is running: `ollama list`
-- Ensure llama3 model is installed: `ollama pull llama3`
+- Ensure llama3.1:8b model is installed: `ollama pull llama3.1:8b`
 - Check Ollama service is accessible at `http://localhost:11434`
+- For EC2 Ubuntu, ensure `OLLAMA_BASE_URL` environment variable is set correctly
 
 ### Endpoints
 
@@ -206,6 +262,18 @@ Response:
 
 #### Assessment Recommendation
 
+**Live Endpoint**:
+```http
+POST http://98.88.103.35:8000/recommend
+Content-Type: application/json
+
+{
+  "query": "I am hiring for Java developers who can also collaborate effectively with my business teams. Looking for an assessment(s) that can be completed in 40 minutes.",
+  "top_k": 5
+}
+```
+
+**Local Endpoint**:
 ```http
 POST http://127.0.0.1:8000/recommend
 Content-Type: application/json
@@ -406,11 +474,39 @@ Key parameters can be adjusted in the code:
 - `retrieval_k` (app.py): Primary retrieval pool size (default: 100)
 - `rerank_top_k` (rag/utils/rerank.py): Final recommendation count (default: 5-10)
 - Embedding model: `sentence-transformers/all-MiniLM-L6-v2`
-- LLM model: `llama3` (via Ollama)
+- LLM model: `llama3.1:8b` (via Ollama)
+- `OLLAMA_BASE_URL` (rag/utils/intent.py): Ollama service URL (default: `http://localhost:11434`)
+- `OLLAMA_MODEL` (rag/utils/intent.py): Ollama model name (default: `llama3.1:8b`)
+
+## Production Deployment
+
+### EC2 Ubuntu Deployment
+
+The system is deployed on EC2 Ubuntu with the following configuration:
+
+- **Server**: EC2 Ubuntu instance
+- **API Endpoint**: `http://98.88.103.35:8000`
+- **Ollama**: Running natively on EC2 host (not in Docker)
+- **Model**: llama3.1:8b
+- **Docker Image**: Optimized multi-stage build (~2.5GB)
+
+### Environment Configuration
+
+For EC2 Ubuntu deployment:
+- Ollama runs on the host at `http://localhost:11434`
+- Application connects to Ollama using default `OLLAMA_BASE_URL`
+- No additional environment variables required for native deployment
+
+For Docker deployment on EC2:
+```bash
+export OLLAMA_BASE_URL=http://host.docker.internal:11434
+docker run -p 8000:8000 --add-host=host.docker.internal:host-gateway \
+  -e OLLAMA_BASE_URL=$OLLAMA_BASE_URL shl
+```
 
 ## Limitations and Future Enhancements
 
-- LLM dependency on local Ollama instance - requires Ollama to be installed and running locally (consider cloud-based alternatives for production deployment)
+- LLM dependency on local Ollama instance - requires Ollama to be installed and running (deployed on EC2 for production)
 - Static keyword normalization mappings (could benefit from learned embeddings)
 - Fixed scoring weights (could be optimized through hyperparameter tuning)
 - No caching layer for frequent queries
